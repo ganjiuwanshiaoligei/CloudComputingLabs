@@ -23,7 +23,7 @@ def dict2str(d):
 
 
 class HttpRequest(object):
-    
+    rootdir = os.path.split( os.path.realpath( sys.argv[0] ) )[0]
     
 
 
@@ -80,7 +80,7 @@ class HttpRequest(object):
                     continue
                 key, val = i.split('=', 1)
                 self.request_data[key] = val
-            self.dynamicRequest(self.url)
+            self.dynamicRequest(HttpRequest.rootdir+self.url)
         elif self.method == 'GET':
             if self.url.find('?') != -1:        # 含有参数的get
                 self.request_data = {}
@@ -90,9 +90,9 @@ class HttpRequest(object):
                 for i in parameters:
                     key, val = i.split('=', 1)
                     self.request_data[key] = val
-                self.dynamicRequest( s_url)
+                self.dynamicRequest( HttpRequest.rootdir+s_url)
             else:
-                self.staticRequest( self.url)
+                self.staticRequest( HttpRequest.rootdir+self.url)
         else:
             self.response_line = ErrorCode.NOT_IMP
           #  self.response_head['Content-length'] = self.lent
