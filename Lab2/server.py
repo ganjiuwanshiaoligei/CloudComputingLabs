@@ -108,7 +108,7 @@ class HttpRequest(object):
          #   self.response_head['Content-length'] = self.lent
             self.response_head['Server'] = 'My Web Server'
             self.response_head['Content-Type'] = 'text/html'
-            self.response_body = '<html><title>404 Not Found</title><body bgcolor=ffffff>' + '\n' + '  Not Found' +'\n' + "<p>Couldn't fiind this file:" + path + '\n' + '<hr><em>HTTP Web server</em>' + '\n' + '</body></html>'+ '\n'
+            self.response_body = '<html><title>404 Not Found</title><body bgcolor=ffffff>' + '\n' + '  Not Found' +'\n' + "<p>Couldn't find this file:" + path + '\n' + '<hr><em>HTTP Web server</em>' + '\n' + '</body></html>'+ '\n'
 
         else:
             extension_name = os.path.splitext(path)[1]  # 扩展名
@@ -135,7 +135,7 @@ class HttpRequest(object):
               #  self.response_head['Content-length'] = self.lent
                 self.response_head['Server'] = 'My Web Server'
                 self.response_head['Content-Type'] = 'text/html'
-                self.response_body = '<html><title>404 Not Found</title><body bgcolor=ffffff>' + '\n' + '  Not Found' + '\n' + "<p>Couldn't fiind this file:" + path + '\n' + '<hr><em>HTTP Web server</em>' + '\n' + '</body></html>' + '\n'
+                self.response_body = '<html><title>404 Not Found</title><body bgcolor=ffffff>' + '\n' + '  Not Found' + '\n' + "<p>Couldn't find this file:" + path + '\n' + '<hr><em>HTTP Web server</em>' + '\n' + '</body></html>' + '\n'
 
     def dynamicRequest(self, path):
         # 如果找不到或者后缀名不是py则输出404
@@ -145,7 +145,7 @@ class HttpRequest(object):
           #  self.response_head['Content-length'] = self.lent
             self.response_head['Server'] = 'My Web Server'
             self.response_head['Content-Type'] = 'text/html'
-            self.response_body = '<html><title>404 Not Found</title><body bgcolor=ffffff>' + '\n' + '  Not Found' + '\n' + "<p>Couldn't fiind this file:" + path + '\n' + '<hr><em>HTTP Web server</em>' + '\n' + '</body></html>'
+            self.response_body = '<html><title>404 Not Found</title><body bgcolor=ffffff>' + '\n' + '  Not Found' + '\n' + "<p>Couldn't find this file:" + path + '\n' + '<hr><em>HTTP Web server</em>' + '\n' + '</body></html>'
 
         else:
             # 获取文件名，并且将/替换成.
